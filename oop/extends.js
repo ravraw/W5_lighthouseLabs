@@ -11,3 +11,22 @@ class Person {
     } .`;
   }
 }
+
+// students
+
+class Student extends Person {
+  enrollStudent(cohort) {
+    this.cohort = cohort;
+  }
+}
+
+// mentor
+
+class Mentor extends Person {
+  goOnShift() {
+    this.onShift = true;
+  }
+  goOffShift() {
+    this.onShift = false;
+  }
+}
