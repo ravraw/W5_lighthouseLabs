@@ -9,15 +9,19 @@ class Person {
   bio() {
     return `My name is ${this.name} , and here\'s my quirky fact : ${
       this.quirkyFact
-    } .`;
+    } . ${this.location ? `i live in ${this.location}.` : ''}`;
   }
 }
 
 // students
 
 class Student extends Person {
-  constructor(name, email, quirkyFact) {
+  constructor(name, email, quirkyFact, location) {
     super(name, email, quirkyFact);
+    this.location = location;
+  }
+  myLocation() {
+    return this.location;
   }
   enrollStudent(cohort) {
     this.cohort = cohort;
@@ -27,9 +31,9 @@ class Student extends Person {
 // mentor
 
 class Mentor extends Person {
-  constructor(name, email, quirkyFact) {
-    super(name, email, quirkyFact);
-  }
+  // constructor(name, email, quirkyFact) {
+  //   super(name, email, quirkyFact);
+  // }
   goOnShift() {
     this.onShift = true;
   }
@@ -40,9 +44,9 @@ class Mentor extends Person {
 
 // student instences
 
-student1 = new Student('rav', 'rav@gmail.com', 'shrimp breeder');
-student2 = new Student('raw', 'raw@gmail.com', 'Juggler');
-student3 = new Student('ravraw', 'ravraw@gmail.com', 'Hunter');
+student1 = new Student('rav', 'rav@gmail.com', 'shrimp breeder', 'calgary');
+student2 = new Student('raw', 'raw@gmail.com', 'Juggler', 'calgary');
+student3 = new Student('ravraw', 'ravraw@gmail.com', 'Hunter', 'calgary');
 
 // student mentor instences
 
