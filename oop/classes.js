@@ -5,6 +5,18 @@ class Pizza {
     this.crust = crust;
     this.toppings = ['cheese'];
   }
+
+  get price() {
+    const basePrice = 10;
+    const toppingPrice = 2;
+    return basePrice + this.toppings.length * toppingPrice;
+  }
+
+  set size(size) {
+    if (size === 's' || size === 'm' || size === 'l') {
+      this.size = size;
+    }
+  }
   pizzaDescription() {
     console.log(`"${this.size} ${this.crust} pizza with ${this.toppings}"`);
   }
@@ -14,6 +26,7 @@ class Pizza {
 }
 
 const pizza1 = new Pizza('medium', 'thin crust');
+//pizza1.size = 's';
 pizza1.addTopping('bacon');
 pizza1.addTopping('peppers');
 //console.log('pizza1 toppings :', pizza1.toppings);
